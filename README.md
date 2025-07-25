@@ -21,7 +21,7 @@
 ## 🧰 사용 기술 (Tech Stack)
 
 - **Backend**: Java, Spring Boot, JPA
-- **Database**: PostgreSQL
+- **Database**: H2 / PostgreSQL
 - **Frontend**: Thymeleaf or React (선택)
 - **Deployment**: Render / Railway  
 - **Version Control**: Git + GitHub
