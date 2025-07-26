@@ -2,6 +2,7 @@ package com.app.ironist.service;
 
 import com.app.ironist.domain.Member;
 import com.app.ironist.repository.memberRepository.MemberRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,7 +37,8 @@ public class MemberService {
         return memberRepository.save(member);
     }
 
-    public void deleteMember(Long id) {
+    public ResponseEntity deleteMember(Long id) {
         memberRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -2,6 +2,7 @@ package com.app.ironist.service;
 
 import com.app.ironist.domain.Post;
 import com.app.ironist.repository.postRepository.PostRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,8 +35,9 @@ public class PostService {
         return postRepository.save(post);
     }
 
-    public void deletePost(Long id) {
+    public ResponseEntity deletePost(Long id) {
         postRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
