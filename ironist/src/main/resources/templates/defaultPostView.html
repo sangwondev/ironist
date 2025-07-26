@@ -12,8 +12,12 @@
     <input type="text" id="title" th:field="*{title}" required/><br/>
 
     <label for="content">내용</label><br/>
-    <textarea id="content" th:field="*{content}" oninput="updateCount(this)" required></textarea>
+    <textarea id="content" th:field="*{content}"
+              oninput="updateCount(this)" onclick="startTimer()" required></textarea>
+    <input type="hidden" name="duration" id="durationField" value="0">
+
     <p>글자 수: <span id="charCount">0</span></p>
+    <p>작성 시간: <span id="writingTime">00:00:00</span></p>
     <br/>
 
     <label>
@@ -29,5 +33,26 @@
 <script>
     function updateCount(el) {
         document.getElementById("charCount").innerText = el.value.length;
+    }
+
+    let seconds = 0;
+    let timerId = null;
+    let started = false;
+
+    function formatTime(sec) {
+        const hrs = String(Math.floor(sec / 3600)).padStart(2, '0');
+        const mins = String(Math.floor((sec % 3600) / 60)).padStart(2, '0');
+        const secs = String(sec % 60).padStart(2, '0');
+        return `${hrs}:${mins}:${secs}`;
+    }
+
+    function startTimer() {
+        if (started) return;
+        started = true;
+        timerId = setInterval(() => {
+            seconds++;
+            document.getElementById("writingTime").innerText = formatTime(seconds);
+            document.getElementById("durationTime").value = seconds;
+        }, 1000);
     }
 </script>
