@@ -1,9 +1,6 @@
 package com.app.ironist.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -18,5 +15,6 @@ public class Post {
     private LocalDateTime createdDatetime;
 
     @ManyToOne
-    private User user;
+    @JoinColumn(name = "member_id")
+    private Member member;
 }
