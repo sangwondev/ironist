@@ -19,6 +19,8 @@ public class Post {
     private String content;
     private Boolean isPublic;
     private LocalDateTime createdDatetime;
+    private Integer charCount;
+    private Integer writingTime;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
