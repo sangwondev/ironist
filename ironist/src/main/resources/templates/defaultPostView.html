@@ -12,7 +12,9 @@
     <input type="text" id="title" th:field="*{title}" required/><br/>
 
     <label for="content">내용</label><br/>
-    <textarea id="content" th:field="*{content}" required></textarea><br/>
+    <textarea id="content" th:field="*{content}" oninput="updateCount(this)" required></textarea>
+    <p>글자 수: <span id="charCount">0</span></p>
+    <br/>
 
     <label>
         <input type="checkbox" th:field="*{isPublic}"/> 공개
@@ -23,3 +25,9 @@
 </form>
 </body>
 </html>
+
+<script>
+    function updateCount(el) {
+        document.getElementById("charCount").innerText = el.value.length;
+    }
+</script>
