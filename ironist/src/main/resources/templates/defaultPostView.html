@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기</title>
+</head>
+<body>
+<h1>아이러니스트 글쓰기</h1>
+
+<form th:action="@{/posts}" th:object="${post}" method="post">
+    <label for="title">제목</label><br/>
+    <input type="text" id="title" th:field="*{title}" required/><br/>
+
+    <label for="content">내용</label><br/>
+    <textarea id="content" th:field="*{content}" required></textarea><br/>
+
+    <label>
+        <input type="checkbox" th:field="*{isPublic}"/> 공개
+    </label><br/>
+
+    <button type="submit">작성하기</button>
+    <button type="button" onclick="location.href='/posts/list'">글 목록 보기</button>
+</form>
+</body>
+</html>
