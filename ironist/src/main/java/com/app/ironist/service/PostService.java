@@ -5,6 +5,7 @@ import com.app.ironist.repository.postRepository.PostRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -15,6 +16,7 @@ public class PostService {
     public PostService(PostRepository postRepository) { this.postRepository = postRepository; }
 
     public Post createPost(Post post) {
+        post.setCreatedDatetime(LocalDateTime.now());
         return postRepository.save(post);
     }
 
