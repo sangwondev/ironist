@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <title>Ironist</title>
     <link rel="stylesheet" type="text/css" href="/css/post-editor.css">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Parisienne&display=swap"
+          rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
-<h1>Ironist</h1>
+
+<header class="header">
+    <div class="menu">
+        <nav>
+            <a href="#">menu</a>
+        </nav>
+    </div>
+    <div>
+        <h1>️Ironist</h1>
+    </div>
+    <div class="profile-box">
+        <div class="profile-info">
+                <div class="profile-img">
+                    <img src="https://i.namu.wiki/i/Vgkz5PksndYUHUcis-Zg_hzvJ1JfPpZpoik-DNHax4VuO3MC_A3pppUcHz078AvsUY2BRzqrwgZMeWMP7DXcxM8Vp4ozBglxjgwlxGeYw1dxz4gKEwgjkIIslXRzPovZQ49xBhG5VS6iLdTbQ5ep1A.webp"
+                         alt="Profile" class="profile-img">
+                </div>
+                <div>
+                    <h6 class="member-name">Richard Rorty</h6>
+                    <p>Admin</p>
+                </div>
+        </div>
+    </div>
+</header>
+<hr/>
+
 
 <form th:action="@{/posts}" th:object="${post}" method="post">
     <input placeholder="제목" type="text" id="title" th:field="*{title}" required/><br/>
@@ -19,8 +44,8 @@
     <input type="hidden" name="duration" id="durationField" value="0">
 
     <div>
-    <p>글자 수: <span id="charCount">0</span></p>
-    <p>작성 시간: <span id="writingTime">00:00:00</span></p>
+        <p>글자 수: <span id="charCount">0</span></p>
+        <p>작성 시간: <span id="writingTime">00:00:00</span></p>
     </div>
     <br/>
 
@@ -29,8 +54,8 @@
     </label><br/>
 
     <div>
-    <button type="submit">작성하기</button>
-    <button type="button" onclick="location.href='/posts/list'">글 목록 보기</button>
+        <button type="submit">작성하기</button>
+        <button type="button" onclick="location.href='/posts/list'">글 목록 보기</button>
     </div>
 </form>
 </body>
