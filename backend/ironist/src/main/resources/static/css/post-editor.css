@@ -29,6 +29,12 @@ h1 {
     font-style: normal;
 }
 
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 /* 폼 전체 중앙 정렬 */
 form {
     display: flex;

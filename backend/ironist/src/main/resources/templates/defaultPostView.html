@@ -13,7 +13,9 @@
 <header class="header">
     <div class="menu">
         <nav>
-            <a href="#">menu</a>
+            <a href="#" title="Menu">
+            <img src="/images/menu-menu-bar-svgrepo-com.svg" alt="Menu" class="icon"/>
+            </a>
         </nav>
     </div>
     <div>
@@ -34,7 +36,8 @@
 </header>
 <hr/>
 
-
+<!--================= main start =================-->
+<main>
 <form th:action="@{/posts}" th:object="${post}" method="post">
     <input placeholder="제목" type="text" id="title" th:field="*{title}" required/><br/>
 
@@ -58,6 +61,8 @@
         <button type="button" onclick="location.href='/posts/list'">글 목록 보기</button>
     </div>
 </form>
+</main>
+<!-- ================= main end ================= -->
 
 <!-- ================= footer start ==================== -->
 <footer class="footer">
