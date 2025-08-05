@@ -22,7 +22,7 @@
 
 - **Backend**: Java, Spring Boot, JPA
 - **Database**: H2 / PostgreSQL
-- **Frontend**: Thymeleaf or React (선택)
+- **Frontend**: Thymeleaf or React(Vite+TypeScript+Tailwind)
 - **Deployment**: Render / Railway  
 - **Version Control**: Git + GitHub
 
