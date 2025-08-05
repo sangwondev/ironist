@@ -12,7 +12,7 @@ const Header = () : JSX.Element => {
           </nav>
         </div>
         <div>
-          <h1>️Ironist</h1>
+          <h1 className="m-7">️Ironist</h1>
         </div>
         <div className="profile-box">
           <div className="profile-info">

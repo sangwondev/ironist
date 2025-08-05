@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 /* 전체 배경 */
 body {
     background-color: #f5e7d0; /* 옅은 황토색 */
